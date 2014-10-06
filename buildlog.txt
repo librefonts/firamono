@@ -1,0 +1,1926 @@
+# Bake Begins!
+### (1 of 6) Copy sources
+$ cp -a /home/travis/build/fontdirectory/firamono/METADATA.json /home/travis/build/fontdirectory/firamono/builds/build
+$ cp -a /home/travis/build/fontdirectory/firamono/DESCRIPTION.en_us.html /home/travis/build/fontdirectory/firamono/builds/build
+$ cp -a FiraMono-Regular.ttf.ttx FiraMono-Medium.ttf.ttx FiraMono-Bold.ttf.ttx FiraMono-Regular.ttf._p_r_e_p.ttx FiraMono-Regular.ttf._p_o_s_t.ttx FiraMono-Regular.ttf._n_a_m_e.ttx FiraMono-Regular.ttf._m_a_x_p.ttx FiraMono-Regular.ttf._l_o_c_a.ttx FiraMono-Regular.ttf._h_m_t_x.ttx FiraMono-Regular.ttf._h_h_e_a.ttx FiraMono-Regular.ttf._h_e_a_d.ttx FiraMono-Regular.ttf._g_l_y_f.ttx FiraMono-Regular.ttf._g_a_s_p.ttx FiraMono-Regular.ttf._f_p_g_m.ttx FiraMono-Regular.ttf._c_v_t.ttx FiraMono-Regular.ttf._c_m_a_p.ttx FiraMono-Regular.ttf.O_S_2f_2.ttx FiraMono-Regular.ttf.GlyphOrder.ttx FiraMono-Regular.ttf.G_S_U_B_.ttx FiraMono-Regular.ttf.G_P_O_S_.ttx FiraMono-Regular.ttf.G_D_E_F_.ttx FiraMono-Medium.ttf._p_r_e_p.ttx FiraMono-Medium.ttf._p_o_s_t.ttx FiraMono-Medium.ttf._n_a_m_e.ttx FiraMono-Medium.ttf._m_a_x_p.ttx FiraMono-Medium.ttf._l_o_c_a.ttx FiraMono-Medium.ttf._h_m_t_x.ttx FiraMono-Medium.ttf._h_h_e_a.ttx FiraMono-Medium.ttf._h_e_a_d.ttx FiraMono-Medium.ttf._g_l_y_f.ttx FiraMono-Medium.ttf._g_a_s_p.ttx FiraMono-Medium.ttf._f_p_g_m.ttx FiraMono-Medium.ttf._c_v_t.ttx FiraMono-Medium.ttf._c_m_a_p.ttx FiraMono-Medium.ttf.O_S_2f_2.ttx FiraMono-Medium.ttf.GlyphOrder.ttx FiraMono-Medium.ttf.G_S_U_B_.ttx FiraMono-Medium.ttf.G_P_O_S_.ttx FiraMono-Medium.ttf.G_D_E_F_.ttx FiraMono-Bold.ttf._p_r_e_p.ttx FiraMono-Bold.ttf._p_o_s_t.ttx FiraMono-Bold.ttf._n_a_m_e.ttx FiraMono-Bold.ttf._m_a_x_p.ttx FiraMono-Bold.ttf._l_o_c_a.ttx FiraMono-Bold.ttf._h_m_t_x.ttx FiraMono-Bold.ttf._h_h_e_a.ttx FiraMono-Bold.ttf._h_e_a_d.ttx FiraMono-Bold.ttf._g_l_y_f.ttx FiraMono-Bold.ttf._g_a_s_p.ttx FiraMono-Bold.ttf._f_p_g_m.ttx FiraMono-Bold.ttf._c_v_t.ttx FiraMono-Bold.ttf._c_m_a_p.ttx FiraMono-Bold.ttf.O_S_2f_2.ttx FiraMono-Bold.ttf.GlyphOrder.ttx FiraMono-Bold.ttf.G_S_U_B_.ttx FiraMono-Bold.ttf.G_P_O_S_.ttx FiraMono-Bold.ttf.G_D_E_F_.ttx /home/travis/build/fontdirectory/firamono/builds/build/sources
+### (2 of 6) pyfontaine
+### (3 of 6) Run upstream tests
+$ fontbakery-check.py upstream-repo sources
+$ fontaine --collections subsets --text /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Bold.ttf.ttx /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Medium.ttf.ttx /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Regular.ttf.ttx > fontaine.txt
+WARNING: Please install [PyICU](https://pypi.python.org/pypi/PyICU) toenable [feature], perhaps with: pip install pyicu
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_contours(): OK
+end of pyfontaine process
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_points(): OK
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_test_prepolation_glyph_names(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_component(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_mark_to_mark(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_own_glyphs(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_bakery_yaml_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_copyright_notices_same_across_family(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_description_html_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_fontlog_txt_exists(): FAIL
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_metadata_json_exists(): OK
+$ fontbakery-check.py upstream-ttx FiraMono-Bold.ttf.ttx
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Bold.ttf.ttx /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Bold.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+$ fontbakery-check.py upstream-ttx FiraMono-Medium.ttf.ttx
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Medium.ttf.ttx /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Medium.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+$ fontbakery-check.py upstream-ttx FiraMono-Regular.ttf.ttx
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Regular.ttf.ttx /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Regular.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+### (4 of 6) Convert sources to TTF
+$ ttx -d /home/travis/build/fontdirectory/firamono/builds/build /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Regular.ttx /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Medium.ttx /home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Bold.ttx
+Compiling "/home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Regular.ttx" to "/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'hmtx' table...
+Parsing 'cmap' table...
+Parsing 'fpgm' table...
+Parsing 'prep' table...
+Parsing 'cvt ' table...
+Parsing 'loca' table...
+Parsing 'glyf' table...
+Parsing 'name' table...
+Parsing 'post' table...
+Parsing 'gasp' table...
+Parsing 'GDEF' table...
+Parsing 'GPOS' table...
+Parsing 'GSUB' table...
+Compiling "/home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Medium.ttx" to "/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'hmtx' table...
+Parsing 'cmap' table...
+Parsing 'fpgm' table...
+Parsing 'prep' table...
+Parsing 'cvt ' table...
+Parsing 'loca' table...
+Parsing 'glyf' table...
+Parsing 'name' table...
+Parsing 'post' table...
+Parsing 'gasp' table...
+Parsing 'GDEF' table...
+Parsing 'GPOS' table...
+Parsing 'GSUB' table...
+Compiling "/home/travis/build/fontdirectory/firamono/builds/build/sources/FiraMono-Bold.ttx" to "/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'hmtx' table...
+Parsing 'cmap' table...
+Parsing 'fpgm' table...
+Parsing 'prep' table...
+Parsing 'cvt ' table...
+Parsing 'loca' table...
+Parsing 'glyf' table...
+Parsing 'name' table...
+Parsing 'post' table...
+Parsing 'gasp' table...
+Parsing 'GDEF' table...
+Parsing 'GPOS' table...
+Parsing 'GSUB' table...
+### Test FiraMono-Regular.ttf
+$ fontbakery-check.py result FiraMono-Regular.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): FAIL
+$ fontbakery-fix-ascii-fontmetadata.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): FAIL
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+The glyph named Delta is mapped to U+0394.
+But its name indicates it should be mapped to U+2206.
+The glyph named Omega is mapped to U+03A9.
+But its name indicates it should be mapped to U+2126.
+The glyph named mu is mapped to U+03BC.
+But its name indicates it should be mapped to U+00B5.
+The glyph named uni25D6 is mapped to U+25D7.
+But its name indicates it should be mapped to U+25D6.
+The glyph named uni25D7 is mapped to U+25F5.
+But its name indicates it should be mapped to U+25D7.
+The glyph named uni25F4 is mapped to U+25F7.
+But its name indicates it should be mapped to U+25F4.
+The glyph named uni25F5 is mapped to U+25C9.
+But its name indicates it should be mapped to U+25F5.
+The glyph named uni25F6 is mapped to U+25CE.
+But its name indicates it should be mapped to U+25F6.
+The glyph named uni25F7 is mapped to U+25D9.
+But its name indicates it should be mapped to U+25F7.
+The glyph named fisheye is mapped to U+25DA.
+But its name indicates it should be mapped to U+25C9.
+The glyph named bullseye is mapped to U+25DB.
+But its name indicates it should be mapped to U+25CE.
+The glyph named invcircle is mapped to U+25E0.
+But its name indicates it should be mapped to U+25D9.
+The glyph named uni25DA is mapped to U+25E1.
+But its name indicates it should be mapped to U+25DA.
+The glyph named uni25DB is mapped to U+25DC.
+But its name indicates it should be mapped to U+25DB.
+The glyph named uni25E0 is mapped to U+25DD.
+But its name indicates it should be mapped to U+25E0.
+The glyph named uni25E1 is mapped to U+25DE.
+But its name indicates it should be mapped to U+25E1.
+The glyph named uni25DC is mapped to U+25DF.
+But its name indicates it should be mapped to U+25DC.
+The glyph named uni25DD is mapped to U+25C6.
+But its name indicates it should be mapped to U+25DD.
+The glyph named uni25DE is mapped to U+25C7.
+But its name indicates it should be mapped to U+25DE.
+The glyph named uni25DF is mapped to U+25CA.
+But its name indicates it should be mapped to U+25DF.
+The glyph named lozenge is mapped to U+25AD.
+But its name indicates it should be mapped to U+25CA.
+The glyph named uni25AE is mapped to U+25AF.
+But its name indicates it should be mapped to U+25AE.
+The glyph named filledrect is mapped to U+250C.
+But its name indicates it should be mapped to U+25AC.
+The glyph named uni25AD is mapped to U+2514.
+But its name indicates it should be mapped to U+25AD.
+The glyph named uni25AF is mapped to U+2510.
+But its name indicates it should be mapped to U+25AF.
+The glyph named uni250C is mapped to U+2518.
+But its name indicates it should be mapped to U+250C.
+The glyph named uni2514 is mapped to U+253C.
+But its name indicates it should be mapped to U+2514.
+The glyph named uni2510 is mapped to U+252C.
+But its name indicates it should be mapped to U+2510.
+The glyph named uni2518 is mapped to U+2534.
+But its name indicates it should be mapped to U+2518.
+The glyph named uni253C is mapped to U+251C.
+But its name indicates it should be mapped to U+253C.
+The glyph named uni252C is mapped to U+2524.
+But its name indicates it should be mapped to U+252C.
+The glyph named uni2534 is mapped to U+2500.
+But its name indicates it should be mapped to U+2534.
+The glyph named uni251C is mapped to U+2502.
+But its name indicates it should be mapped to U+251C.
+The glyph named uni2524 is mapped to U+2561.
+But its name indicates it should be mapped to U+2524.
+The glyph named uni2500 is mapped to U+2562.
+But its name indicates it should be mapped to U+2500.
+The glyph named uni2502 is mapped to U+2556.
+But its name indicates it should be mapped to U+2502.
+The glyph named uni2561 is mapped to U+2555.
+But its name indicates it should be mapped to U+2561.
+The glyph named uni2562 is mapped to U+2563.
+But its name indicates it should be mapped to U+2562.
+The glyph named uni2556 is mapped to U+2551.
+But its name indicates it should be mapped to U+2556.
+The glyph named uni2555 is mapped to U+2557.
+But its name indicates it should be mapped to U+2555.
+The glyph named uni2563 is mapped to U+255D.
+But its name indicates it should be mapped to U+2563.
+The glyph named uni2551 is mapped to U+255C.
+But its name indicates it should be mapped to U+2551.
+The glyph named uni2557 is mapped to U+255B.
+But its name indicates it should be mapped to U+2557.
+The glyph named uni255D is mapped to U+255E.
+But its name indicates it should be mapped to U+255D.
+The glyph named uni255C is mapped to U+255F.
+But its name indicates it should be mapped to U+255C.
+The glyph named uni255B is mapped to U+255A.
+But its name indicates it should be mapped to U+255B.
+The glyph named uni255E is mapped to U+2554.
+But its name indicates it should be mapped to U+255E.
+The glyph named uni255F is mapped to U+2569.
+But its name indicates it should be mapped to U+255F.
+The glyph named uni255A is mapped to U+2566.
+But its name indicates it should be mapped to U+255A.
+The glyph named uni2554 is mapped to U+2560.
+But its name indicates it should be mapped to U+2554.
+The glyph named uni2569 is mapped to U+2550.
+But its name indicates it should be mapped to U+2569.
+The glyph named uni2566 is mapped to U+256C.
+But its name indicates it should be mapped to U+2566.
+The glyph named uni2560 is mapped to U+2567.
+But its name indicates it should be mapped to U+2560.
+The glyph named uni2550 is mapped to U+2568.
+But its name indicates it should be mapped to U+2550.
+The glyph named uni256C is mapped to U+2564.
+But its name indicates it should be mapped to U+256C.
+The glyph named uni2567 is mapped to U+2565.
+But its name indicates it should be mapped to U+2567.
+The glyph named uni2568 is mapped to U+2559.
+But its name indicates it should be mapped to U+2568.
+The glyph named uni2564 is mapped to U+2558.
+But its name indicates it should be mapped to U+2564.
+The glyph named uni2565 is mapped to U+2552.
+But its name indicates it should be mapped to U+2565.
+The glyph named uni2559 is mapped to U+2553.
+But its name indicates it should be mapped to U+2559.
+The glyph named uni2558 is mapped to U+256B.
+But its name indicates it should be mapped to U+2558.
+The glyph named uni2552 is mapped to U+256A.
+But its name indicates it should be mapped to U+2552.
+The glyph named uni2553 is mapped to U+25A0.
+But its name indicates it should be mapped to U+2553.
+The glyph named uni256B is mapped to U+25A1.
+But its name indicates it should be mapped to U+256B.
+The glyph named uni256A is mapped to U+25A2.
+But its name indicates it should be mapped to U+256A.
+The glyph named filledbox is mapped to U+25A3.
+But its name indicates it should be mapped to U+25A0.
+The glyph named H22073 is mapped to U+25AA.
+But its name indicates it should be mapped to U+25A1.
+The glyph named uni25A2 is mapped to U+25AB.
+But its name indicates it should be mapped to U+25A2.
+The glyph named squarewhitewithsmallblack is mapped to U+25E7.
+But its name indicates it should be mapped to U+25A3.
+The glyph named H18543 is mapped to U+25E8.
+But its name indicates it should be mapped to U+25AA.
+The glyph named H18551 is mapped to U+25E9.
+But its name indicates it should be mapped to U+25AB.
+The glyph named uni25E7 is mapped to U+25EA.
+But its name indicates it should be mapped to U+25E7.
+The glyph named uni25E8 is mapped to U+25EB.
+But its name indicates it should be mapped to U+25E8.
+The glyph named uni25E9 is mapped to U+25F0.
+But its name indicates it should be mapped to U+25E9.
+The glyph named uni25EA is mapped to U+25F1.
+But its name indicates it should be mapped to U+25EA.
+The glyph named uni25EB is mapped to U+25F2.
+But its name indicates it should be mapped to U+25EB.
+The glyph named uni25F0 is mapped to U+25F3.
+But its name indicates it should be mapped to U+25F0.
+The glyph named uni25F1 is mapped to U+25B2.
+But its name indicates it should be mapped to U+25F1.
+The glyph named uni25F2 is mapped to U+25BC.
+But its name indicates it should be mapped to U+25F2.
+The glyph named uni25F3 is mapped to U+25BA.
+But its name indicates it should be mapped to U+25F3.
+The glyph named triagup is mapped to U+25C4.
+But its name indicates it should be mapped to U+25B2.
+The glyph named triagdn is mapped to U+25E5.
+But its name indicates it should be mapped to U+25BC.
+The glyph named triagrt is mapped to U+25E2.
+But its name indicates it should be mapped to U+25BA.
+The glyph named triaglf is mapped to U+25E3.
+But its name indicates it should be mapped to U+25C4.
+The glyph named blackupperrighttriangle is mapped to U+25E4.
+But its name indicates it should be mapped to U+25E5.
+The glyph named blacklowerrighttriangle is mapped to U+2530.
+But its name indicates it should be mapped to U+25E2.
+The glyph named blacklowerlefttriangle is mapped to U+2512.
+But its name indicates it should be mapped to U+25E3.
+The glyph named blackupperlefttriangle is mapped to U+2527.
+But its name indicates it should be mapped to U+25E4.
+The glyph named uni2530 is mapped to U+250E.
+But its name indicates it should be mapped to U+2530.
+The glyph named uni2512 is mapped to U+251F.
+But its name indicates it should be mapped to U+2512.
+The glyph named uni2527 is mapped to U+2541.
+But its name indicates it should be mapped to U+2527.
+The glyph named uni250E is mapped to U+252F.
+But its name indicates it should be mapped to U+250E.
+The glyph named uni251F is mapped to U+2511.
+But its name indicates it should be mapped to U+251F.
+The glyph named uni2541 is mapped to U+2529.
+But its name indicates it should be mapped to U+2541.
+The glyph named uni252F is mapped to U+250D.
+But its name indicates it should be mapped to U+252F.
+The glyph named uni2511 is mapped to U+2521.
+But its name indicates it should be mapped to U+2511.
+The glyph named uni2529 is mapped to U+2547.
+But its name indicates it should be mapped to U+2529.
+The glyph named uni250D is mapped to U+254D.
+But its name indicates it should be mapped to U+250D.
+The glyph named uni2521 is mapped to U+254F.
+But its name indicates it should be mapped to U+2521.
+The glyph named uni2547 is mapped to U+257B.
+But its name indicates it should be mapped to U+2547.
+The glyph named uni254D is mapped to U+2533.
+But its name indicates it should be mapped to U+254D.
+The glyph named uni254F is mapped to U+2513.
+But its name indicates it should be mapped to U+254F.
+The glyph named uni257B is mapped to U+250F.
+But its name indicates it should be mapped to U+257B.
+The glyph named uni2533 is mapped to U+2501.
+But its name indicates it should be mapped to U+2533.
+The glyph named uni2513 is mapped to U+2578.
+But its name indicates it should be mapped to U+2513.
+The glyph named uni250F is mapped to U+257E.
+But its name indicates it should be mapped to U+250F.
+The glyph named uni2501 is mapped to U+257A.
+But its name indicates it should be mapped to U+2501.
+The glyph named uni2578 is mapped to U+2579.
+But its name indicates it should be mapped to U+2578.
+The glyph named uni257E is mapped to U+253B.
+But its name indicates it should be mapped to U+257E.
+The glyph named uni257A is mapped to U+251B.
+But its name indicates it should be mapped to U+257A.
+The glyph named uni2579 is mapped to U+257F.
+But its name indicates it should be mapped to U+2579.
+The glyph named uni253B is mapped to U+2517.
+But its name indicates it should be mapped to U+253B.
+The glyph named uni251B is mapped to U+2503.
+But its name indicates it should be mapped to U+251B.
+The glyph named uni257F is mapped to U+254B.
+But its name indicates it should be mapped to U+257F.
+The glyph named uni2517 is mapped to U+252B.
+But its name indicates it should be mapped to U+2517.
+The glyph named uni2503 is mapped to U+2523.
+But its name indicates it should be mapped to U+2503.
+The glyph named uni254B is mapped to U+2545.
+But its name indicates it should be mapped to U+254B.
+The glyph named uni252B is mapped to U+252D.
+But its name indicates it should be mapped to U+252B.
+The glyph named uni2523 is mapped to U+2535.
+But its name indicates it should be mapped to U+2523.
+The glyph named uni2545 is mapped to U+253D.
+But its name indicates it should be mapped to U+2545.
+The glyph named uni252D is mapped to U+2532.
+But its name indicates it should be mapped to U+252D.
+The glyph named uni2535 is mapped to U+253A.
+But its name indicates it should be mapped to U+2535.
+The glyph named uni253D is mapped to U+254A.
+But its name indicates it should be mapped to U+253D.
+The glyph named uni2532 is mapped to U+2543.
+But its name indicates it should be mapped to U+2532.
+The glyph named uni253A is mapped to U+2573.
+But its name indicates it should be mapped to U+253A.
+The glyph named uni254A is mapped to U+2572.
+But its name indicates it should be mapped to U+254A.
+The glyph named uni2543 is mapped to U+2571.
+But its name indicates it should be mapped to U+2543.
+The glyph named uni2573 is mapped to U+254C.
+But its name indicates it should be mapped to U+2573.
+The glyph named uni2572 is mapped to U+254E.
+But its name indicates it should be mapped to U+2572.
+The glyph named uni2571 is mapped to U+2577.
+But its name indicates it should be mapped to U+2571.
+The glyph named uni254C is mapped to U+2574.
+But its name indicates it should be mapped to U+254C.
+The glyph named uni254E is mapped to U+257C.
+But its name indicates it should be mapped to U+254E.
+The glyph named uni2577 is mapped to U+2576.
+But its name indicates it should be mapped to U+2577.
+The glyph named uni2574 is mapped to U+2575.
+But its name indicates it should be mapped to U+2574.
+The glyph named uni257C is mapped to U+257D.
+But its name indicates it should be mapped to U+257C.
+The glyph named uni2576 is mapped to U+2546.
+But its name indicates it should be mapped to U+2576.
+The glyph named uni2575 is mapped to U+252E.
+But its name indicates it should be mapped to U+2575.
+The glyph named uni257D is mapped to U+2536.
+But its name indicates it should be mapped to U+257D.
+The glyph named uni2546 is mapped to U+253E.
+But its name indicates it should be mapped to U+2546.
+The glyph named uni252E is mapped to U+2531.
+But its name indicates it should be mapped to U+252E.
+The glyph named uni2536 is mapped to U+2539.
+But its name indicates it should be mapped to U+2536.
+The glyph named uni253E is mapped to U+2549.
+But its name indicates it should be mapped to U+253E.
+The glyph named uni2531 is mapped to U+2544.
+But its name indicates it should be mapped to U+2531.
+The glyph named uni2539 is mapped to U+2540.
+But its name indicates it should be mapped to U+2539.
+The glyph named uni2549 is mapped to U+2538.
+But its name indicates it should be mapped to U+2549.
+The glyph named uni2544 is mapped to U+2526.
+But its name indicates it should be mapped to U+2544.
+The glyph named uni2540 is mapped to U+251A.
+But its name indicates it should be mapped to U+2540.
+The glyph named uni2538 is mapped to U+251E.
+But its name indicates it should be mapped to U+2538.
+The glyph named uni2526 is mapped to U+2516.
+But its name indicates it should be mapped to U+2526.
+The glyph named uni251A is mapped to U+2548.
+But its name indicates it should be mapped to U+251A.
+The glyph named uni251E is mapped to U+2537.
+But its name indicates it should be mapped to U+251E.
+The glyph named uni2516 is mapped to U+252A.
+But its name indicates it should be mapped to U+2516.
+The glyph named uni2548 is mapped to U+2519.
+But its name indicates it should be mapped to U+2548.
+The glyph named uni2537 is mapped to U+2522.
+But its name indicates it should be mapped to U+2537.
+The glyph named uni252A is mapped to U+2515.
+But its name indicates it should be mapped to U+252A.
+The glyph named uni2519 is mapped to U+2542.
+But its name indicates it should be mapped to U+2519.
+The glyph named uni2522 is mapped to U+2528.
+But its name indicates it should be mapped to U+2522.
+The glyph named uni2515 is mapped to U+2520.
+But its name indicates it should be mapped to U+2515.
+The glyph named uni2542 is mapped to U+253F.
+But its name indicates it should be mapped to U+2542.
+The glyph named uni2528 is mapped to U+2525.
+But its name indicates it should be mapped to U+2528.
+The glyph named uni2520 is mapped to U+251D.
+But its name indicates it should be mapped to U+2520.
+The glyph named uni2525 is mapped to U+2620.
+But its name indicates it should be mapped to U+2525.
+The glyph named uni251D is mapped to U+263A.
+But its name indicates it should be mapped to U+251D.
+The glyph named uni2620 is mapped to U+263C.
+But its name indicates it should be mapped to U+2620.
+The glyph named smileface is mapped to U+2640.
+But its name indicates it should be mapped to U+263A.
+The glyph named invsmileface is mapped to U+2642.
+But its name indicates it should be mapped to U+263B.
+The glyph named sun is mapped to U+2660.
+But its name indicates it should be mapped to U+263C.
+The glyph named female is mapped to U+2663.
+But its name indicates it should be mapped to U+2640.
+The glyph named male is mapped to U+2665.
+But its name indicates it should be mapped to U+2642.
+The glyph named spade is mapped to U+2666.
+But its name indicates it should be mapped to U+2660.
+The glyph named club is mapped to U+266A.
+But its name indicates it should be mapped to U+2663.
+The glyph named heart is mapped to U+266B.
+But its name indicates it should be mapped to U+2665.
+The glyph named diamond is mapped to U+007C.
+But its name indicates it should be mapped to U+2666.
+The glyph named musicalnote is mapped to U+00A6.
+But its name indicates it should be mapped to U+266A.
+The glyph named musicalnotedbl is mapped to U+0040.
+But its name indicates it should be mapped to U+266B.
+The glyph named bar is mapped to U+0026.
+But its name indicates it should be mapped to U+007C.
+The glyph named brokenbar is mapped to U+00B6.
+But its name indicates it should be mapped to U+00A6.
+The glyph named at is mapped to U+00A9.
+But its name indicates it should be mapped to U+0040.
+The glyph named ampersand is mapped to U+00AE.
+But its name indicates it should be mapped to U+0026.
+The glyph named paragraph is mapped to U+00A7.
+But its name indicates it should be mapped to U+00B6.
+The glyph named copyright is mapped to U+2122.
+But its name indicates it should be mapped to U+00A9.
+The glyph named registered is mapped to U+00B0.
+But its name indicates it should be mapped to U+00AE.
+The glyph named section is mapped to U+212E.
+But its name indicates it should be mapped to U+00A7.
+The glyph named trademark is mapped to U+2113.
+But its name indicates it should be mapped to U+2122.
+The glyph named degree is mapped to U+2116.
+But its name indicates it should be mapped to U+00B0.
+The glyph named estimated is mapped to U+005E.
+But its name indicates it should be mapped to U+212E.
+The glyph named uni2113 is mapped to U+2020.
+But its name indicates it should be mapped to U+2113.
+The glyph named uni2116 is mapped to U+2021.
+But its name indicates it should be mapped to U+2116.
+The glyph named asciicircum is mapped to U+1F310.
+But its name indicates it should be mapped to U+005E.
+The glyph named dagger is mapped to U+2302.
+But its name indicates it should be mapped to U+2020.
+The glyph named daggerdbl is mapped to U+21EA.
+But its name indicates it should be mapped to U+2021.
+The glyph named u1F310 is mapped to U+2327.
+But its name indicates it should be mapped to U+1F310.
+The glyph named house is mapped to U+232B.
+But its name indicates it should be mapped to U+2302.
+The glyph named capslock is mapped to U+2326.
+But its name indicates it should be mapped to U+21EA.
+The glyph named clear is mapped to U+2328.
+But its name indicates it should be mapped to U+2327.
+The glyph named uni232B is mapped to U+23CE.
+But its name indicates it should be mapped to U+232B.
+The glyph named acute is mapped to U+00B8.
+But its name indicates it should be mapped to U+00B4.
+The glyph named breve is mapped to U+02C6.
+But its name indicates it should be mapped to U+02D8.
+The glyph named caron is mapped to U+00A8.
+But its name indicates it should be mapped to U+02C7.
+The glyph named cedilla is mapped to U+02D9.
+But its name indicates it should be mapped to U+00B8.
+The glyph named circumflex is mapped to U+0060.
+But its name indicates it should be mapped to U+02C6.
+The glyph named dieresis is mapped to U+02DD.
+But its name indicates it should be mapped to U+00A8.
+The glyph named dotaccent is mapped to U+00AF.
+But its name indicates it should be mapped to U+02D9.
+The glyph named grave is mapped to U+02DB.
+But its name indicates it should be mapped to U+0060.
+The glyph named hungarumlaut is mapped to U+02DA.
+But its name indicates it should be mapped to U+02DD.
+The glyph named macron is mapped to U+02DC.
+But its name indicates it should be mapped to U+00AF.
+The glyph named acutecomb is mapped to U+0327.
+But its name indicates it should be mapped to U+0301.
+The glyph named uni0306 is mapped to U+0302.
+But its name indicates it should be mapped to U+0306.
+The glyph named uni030C is mapped to U+0313.
+But its name indicates it should be mapped to U+030C.
+The glyph named uni0327 is mapped to U+0326.
+But its name indicates it should be mapped to U+0327.
+The glyph named uni0302 is mapped to U+0314.
+But its name indicates it should be mapped to U+0302.
+The glyph named uni0326 is mapped to U+0308.
+But its name indicates it should be mapped to U+0326.
+The glyph named uni0314 is mapped to U+0307.
+But its name indicates it should be mapped to U+0314.
+The glyph named uni0308 is mapped to U+030B.
+But its name indicates it should be mapped to U+0308.
+The glyph named uni0307 is mapped to U+0304.
+But its name indicates it should be mapped to U+0307.
+The glyph named gravecomb is mapped to U+030A.
+But its name indicates it should be mapped to U+0300.
+The glyph named uni030B is mapped to U+0336.
+But its name indicates it should be mapped to U+030B.
+The glyph named uni0304 is mapped to U+0335.
+But its name indicates it should be mapped to U+0304.
+The glyph named uni030A is mapped to U+0303.
+But its name indicates it should be mapped to U+030A.
+The glyph named tildecomb is mapped to U+02C9.
+But its name indicates it should be mapped to U+0303.
+The glyph named firsttonechinese is mapped to U+1FC0.
+But its name indicates it should be mapped to U+02C9.
+The glyph named dieresistonos is mapped to U+02BC.
+But its name indicates it should be mapped to U+0385.
+The glyph named uni1FC0 is mapped to U+E000.
+But its name indicates it should be mapped to U+1FC0.
+The glyph named uni02BC is mapped to U+E002.
+But its name indicates it should be mapped to U+02BC.
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): FAIL
+$ fontbakery-fix-vertical-metrics.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ fontbakery-fix-vertical-metrics.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+Parameter              FiraMono-Regular.ttf    FiraMono-Bold.ttf    FiraMono-Medium.ttf    
+ymax                   1050                    1050                 1050                   
+hhea.ascent            1050                    1050                 1050                   
+OS/2.sTypoAscender     1050                    1050                 1050                   
+OS/2.usWinAscent       1050                    1050                 1050                   
+ymin                   -500                    -500                 -500                   
+hhea.descent           -500                    -500                 -500                   
+OS/2.sTypoDescender    -500                    -500                 -500                   
+OS/2.usWinDescent      500                     500                  500                    
+hhea.lineGap           0                       0                    0                      
+OS/2.sTypoLineGap      0                       0                    0                      
+hhea total             1550                    1550                 1550                   
+typo total             1550                    1550                 1550                   
+win total              1550                    1550                 1550                   
+UPM:Heights            1000:1550               1000:1550            1000:1550              
+UPM:Heights %          155 %                   155 %                155 %                  
+
+
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): FAIL
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ fontbakery-fix-glyph-private-encoding.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): ERROR
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+$ fontbakery-fix-nbsp.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): FAIL
+$ fontbakery-fix-opentype-names.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): FAIL
+$ fontbakery-fix-dsig.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): FAIL
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_menu_file_exists(): FAIL
+### Optimize TTF FiraMono-Regular.ttf
+$ ls -l 'FiraMono-Regular.ttf'* # look at the size savings of that subset process
+FiraMono-Regular.ttf.opt: 88324 bytes
+FiraMono-Regular.ttf: 100424 bytes
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf.opt /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+### Autohint TTFs (ttfautohint) FiraMono-Regular.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf '/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.autohint.ttf'
+
+$ ls -l /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf: 88324 bytes
+/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.autohint.ttf: 117788 bytes
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.autohint.ttf /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+### Subset TTFs (pyftsubset) FiraMono-Regular.ttf
+$ pyftsubset FiraMono-Regular.latin
+$ pyftsubset FiraMono-Regular.menu
+strippedname:/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Regular.ttf
+spaceWidth is    600
+nbspWidth is     600
+Nothing to do
+### Test FiraMono-Medium.ttf
+$ fontbakery-check.py result FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): FAIL
+$ fontbakery-fix-ascii-fontmetadata.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): FAIL
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+Warning: Mac string is a subset of the Windows string in the 'name' table
+ for the Family string in the English (US) language.
+Warning: Mac and Windows entries in the 'name' table differ for the
+ SubFamily string in the language English (US)
+ Mac String: Medium
+Windows String: Regular
+The glyph named Delta is mapped to U+0394.
+But its name indicates it should be mapped to U+2206.
+The glyph named Omega is mapped to U+03A9.
+But its name indicates it should be mapped to U+2126.
+The glyph named mu is mapped to U+03BC.
+But its name indicates it should be mapped to U+00B5.
+The glyph named uni25D6 is mapped to U+25D7.
+But its name indicates it should be mapped to U+25D6.
+The glyph named uni25D7 is mapped to U+25F5.
+But its name indicates it should be mapped to U+25D7.
+The glyph named uni25F4 is mapped to U+25F7.
+But its name indicates it should be mapped to U+25F4.
+The glyph named uni25F5 is mapped to U+25C9.
+But its name indicates it should be mapped to U+25F5.
+The glyph named uni25F6 is mapped to U+25CE.
+But its name indicates it should be mapped to U+25F6.
+The glyph named uni25F7 is mapped to U+25D9.
+But its name indicates it should be mapped to U+25F7.
+The glyph named fisheye is mapped to U+25DA.
+But its name indicates it should be mapped to U+25C9.
+The glyph named bullseye is mapped to U+25DB.
+But its name indicates it should be mapped to U+25CE.
+The glyph named invcircle is mapped to U+25E0.
+But its name indicates it should be mapped to U+25D9.
+The glyph named uni25DA is mapped to U+25E1.
+But its name indicates it should be mapped to U+25DA.
+The glyph named uni25DB is mapped to U+25DC.
+But its name indicates it should be mapped to U+25DB.
+The glyph named uni25E0 is mapped to U+25DD.
+But its name indicates it should be mapped to U+25E0.
+The glyph named uni25E1 is mapped to U+25DE.
+But its name indicates it should be mapped to U+25E1.
+The glyph named uni25DC is mapped to U+25DF.
+But its name indicates it should be mapped to U+25DC.
+The glyph named uni25DD is mapped to U+25C6.
+But its name indicates it should be mapped to U+25DD.
+The glyph named uni25DE is mapped to U+25C7.
+But its name indicates it should be mapped to U+25DE.
+The glyph named uni25DF is mapped to U+25CA.
+But its name indicates it should be mapped to U+25DF.
+The glyph named lozenge is mapped to U+25AD.
+But its name indicates it should be mapped to U+25CA.
+The glyph named uni25AE is mapped to U+25AF.
+But its name indicates it should be mapped to U+25AE.
+The glyph named filledrect is mapped to U+250C.
+But its name indicates it should be mapped to U+25AC.
+The glyph named uni25AD is mapped to U+2514.
+But its name indicates it should be mapped to U+25AD.
+The glyph named uni25AF is mapped to U+2510.
+But its name indicates it should be mapped to U+25AF.
+The glyph named uni250C is mapped to U+2518.
+But its name indicates it should be mapped to U+250C.
+The glyph named uni2514 is mapped to U+253C.
+But its name indicates it should be mapped to U+2514.
+The glyph named uni2510 is mapped to U+252C.
+But its name indicates it should be mapped to U+2510.
+The glyph named uni2518 is mapped to U+2534.
+But its name indicates it should be mapped to U+2518.
+The glyph named uni253C is mapped to U+251C.
+But its name indicates it should be mapped to U+253C.
+The glyph named uni252C is mapped to U+2524.
+But its name indicates it should be mapped to U+252C.
+The glyph named uni2534 is mapped to U+2500.
+But its name indicates it should be mapped to U+2534.
+The glyph named uni251C is mapped to U+2502.
+But its name indicates it should be mapped to U+251C.
+The glyph named uni2524 is mapped to U+2561.
+But its name indicates it should be mapped to U+2524.
+The glyph named uni2500 is mapped to U+2562.
+But its name indicates it should be mapped to U+2500.
+The glyph named uni2502 is mapped to U+2556.
+But its name indicates it should be mapped to U+2502.
+The glyph named uni2561 is mapped to U+2555.
+But its name indicates it should be mapped to U+2561.
+The glyph named uni2562 is mapped to U+2563.
+But its name indicates it should be mapped to U+2562.
+The glyph named uni2556 is mapped to U+2551.
+But its name indicates it should be mapped to U+2556.
+The glyph named uni2555 is mapped to U+2557.
+But its name indicates it should be mapped to U+2555.
+The glyph named uni2563 is mapped to U+255D.
+But its name indicates it should be mapped to U+2563.
+The glyph named uni2551 is mapped to U+255C.
+But its name indicates it should be mapped to U+2551.
+The glyph named uni2557 is mapped to U+255B.
+But its name indicates it should be mapped to U+2557.
+The glyph named uni255D is mapped to U+255E.
+But its name indicates it should be mapped to U+255D.
+The glyph named uni255C is mapped to U+255F.
+But its name indicates it should be mapped to U+255C.
+The glyph named uni255B is mapped to U+255A.
+But its name indicates it should be mapped to U+255B.
+The glyph named uni255E is mapped to U+2554.
+But its name indicates it should be mapped to U+255E.
+The glyph named uni255F is mapped to U+2569.
+But its name indicates it should be mapped to U+255F.
+The glyph named uni255A is mapped to U+2566.
+But its name indicates it should be mapped to U+255A.
+The glyph named uni2554 is mapped to U+2560.
+But its name indicates it should be mapped to U+2554.
+The glyph named uni2569 is mapped to U+2550.
+But its name indicates it should be mapped to U+2569.
+The glyph named uni2566 is mapped to U+256C.
+But its name indicates it should be mapped to U+2566.
+The glyph named uni2560 is mapped to U+2567.
+But its name indicates it should be mapped to U+2560.
+The glyph named uni2550 is mapped to U+2568.
+But its name indicates it should be mapped to U+2550.
+The glyph named uni256C is mapped to U+2564.
+But its name indicates it should be mapped to U+256C.
+The glyph named uni2567 is mapped to U+2565.
+But its name indicates it should be mapped to U+2567.
+The glyph named uni2568 is mapped to U+2559.
+But its name indicates it should be mapped to U+2568.
+The glyph named uni2564 is mapped to U+2558.
+But its name indicates it should be mapped to U+2564.
+The glyph named uni2565 is mapped to U+2552.
+But its name indicates it should be mapped to U+2565.
+The glyph named uni2559 is mapped to U+2553.
+But its name indicates it should be mapped to U+2559.
+The glyph named uni2558 is mapped to U+256B.
+But its name indicates it should be mapped to U+2558.
+The glyph named uni2552 is mapped to U+256A.
+But its name indicates it should be mapped to U+2552.
+The glyph named uni2553 is mapped to U+25A0.
+But its name indicates it should be mapped to U+2553.
+The glyph named uni256B is mapped to U+25A1.
+But its name indicates it should be mapped to U+256B.
+The glyph named uni256A is mapped to U+25A2.
+But its name indicates it should be mapped to U+256A.
+The glyph named filledbox is mapped to U+25A3.
+But its name indicates it should be mapped to U+25A0.
+The glyph named H22073 is mapped to U+25AA.
+But its name indicates it should be mapped to U+25A1.
+The glyph named uni25A2 is mapped to U+25AB.
+But its name indicates it should be mapped to U+25A2.
+The glyph named squarewhitewithsmallblack is mapped to U+25E7.
+But its name indicates it should be mapped to U+25A3.
+The glyph named H18543 is mapped to U+25E8.
+But its name indicates it should be mapped to U+25AA.
+The glyph named H18551 is mapped to U+25E9.
+But its name indicates it should be mapped to U+25AB.
+The glyph named uni25E7 is mapped to U+25EA.
+But its name indicates it should be mapped to U+25E7.
+The glyph named uni25E8 is mapped to U+25EB.
+But its name indicates it should be mapped to U+25E8.
+The glyph named uni25E9 is mapped to U+25F0.
+But its name indicates it should be mapped to U+25E9.
+The glyph named uni25EA is mapped to U+25F1.
+But its name indicates it should be mapped to U+25EA.
+The glyph named uni25EB is mapped to U+25F2.
+But its name indicates it should be mapped to U+25EB.
+The glyph named uni25F0 is mapped to U+25F3.
+But its name indicates it should be mapped to U+25F0.
+The glyph named uni25F1 is mapped to U+25B2.
+But its name indicates it should be mapped to U+25F1.
+The glyph named uni25F2 is mapped to U+25BC.
+But its name indicates it should be mapped to U+25F2.
+The glyph named uni25F3 is mapped to U+25BA.
+But its name indicates it should be mapped to U+25F3.
+The glyph named triagup is mapped to U+25C4.
+But its name indicates it should be mapped to U+25B2.
+The glyph named triagdn is mapped to U+25E5.
+But its name indicates it should be mapped to U+25BC.
+The glyph named triagrt is mapped to U+25E2.
+But its name indicates it should be mapped to U+25BA.
+The glyph named triaglf is mapped to U+25E3.
+But its name indicates it should be mapped to U+25C4.
+The glyph named blackupperrighttriangle is mapped to U+25E4.
+But its name indicates it should be mapped to U+25E5.
+The glyph named blacklowerrighttriangle is mapped to U+2530.
+But its name indicates it should be mapped to U+25E2.
+The glyph named blacklowerlefttriangle is mapped to U+2512.
+But its name indicates it should be mapped to U+25E3.
+The glyph named blackupperlefttriangle is mapped to U+2527.
+But its name indicates it should be mapped to U+25E4.
+The glyph named uni2530 is mapped to U+250E.
+But its name indicates it should be mapped to U+2530.
+The glyph named uni2512 is mapped to U+251F.
+But its name indicates it should be mapped to U+2512.
+The glyph named uni2527 is mapped to U+2541.
+But its name indicates it should be mapped to U+2527.
+The glyph named uni250E is mapped to U+252F.
+But its name indicates it should be mapped to U+250E.
+The glyph named uni251F is mapped to U+2511.
+But its name indicates it should be mapped to U+251F.
+The glyph named uni2541 is mapped to U+2529.
+But its name indicates it should be mapped to U+2541.
+The glyph named uni252F is mapped to U+250D.
+But its name indicates it should be mapped to U+252F.
+The glyph named uni2511 is mapped to U+2521.
+But its name indicates it should be mapped to U+2511.
+The glyph named uni2529 is mapped to U+2547.
+But its name indicates it should be mapped to U+2529.
+The glyph named uni250D is mapped to U+254D.
+But its name indicates it should be mapped to U+250D.
+The glyph named uni2521 is mapped to U+254F.
+But its name indicates it should be mapped to U+2521.
+The glyph named uni2547 is mapped to U+257B.
+But its name indicates it should be mapped to U+2547.
+The glyph named uni254D is mapped to U+2533.
+But its name indicates it should be mapped to U+254D.
+The glyph named uni254F is mapped to U+2513.
+But its name indicates it should be mapped to U+254F.
+The glyph named uni257B is mapped to U+250F.
+But its name indicates it should be mapped to U+257B.
+The glyph named uni2533 is mapped to U+2501.
+But its name indicates it should be mapped to U+2533.
+The glyph named uni2513 is mapped to U+2578.
+But its name indicates it should be mapped to U+2513.
+The glyph named uni250F is mapped to U+257E.
+But its name indicates it should be mapped to U+250F.
+The glyph named uni2501 is mapped to U+257A.
+But its name indicates it should be mapped to U+2501.
+The glyph named uni2578 is mapped to U+2579.
+But its name indicates it should be mapped to U+2578.
+The glyph named uni257E is mapped to U+253B.
+But its name indicates it should be mapped to U+257E.
+The glyph named uni257A is mapped to U+251B.
+But its name indicates it should be mapped to U+257A.
+The glyph named uni2579 is mapped to U+257F.
+But its name indicates it should be mapped to U+2579.
+The glyph named uni253B is mapped to U+2517.
+But its name indicates it should be mapped to U+253B.
+The glyph named uni251B is mapped to U+2503.
+But its name indicates it should be mapped to U+251B.
+The glyph named uni257F is mapped to U+254B.
+But its name indicates it should be mapped to U+257F.
+The glyph named uni2517 is mapped to U+252B.
+But its name indicates it should be mapped to U+2517.
+The glyph named uni2503 is mapped to U+2523.
+But its name indicates it should be mapped to U+2503.
+The glyph named uni254B is mapped to U+2545.
+But its name indicates it should be mapped to U+254B.
+The glyph named uni252B is mapped to U+252D.
+But its name indicates it should be mapped to U+252B.
+The glyph named uni2523 is mapped to U+2535.
+But its name indicates it should be mapped to U+2523.
+The glyph named uni2545 is mapped to U+253D.
+But its name indicates it should be mapped to U+2545.
+The glyph named uni252D is mapped to U+2532.
+But its name indicates it should be mapped to U+252D.
+The glyph named uni2535 is mapped to U+253A.
+But its name indicates it should be mapped to U+2535.
+The glyph named uni253D is mapped to U+254A.
+But its name indicates it should be mapped to U+253D.
+The glyph named uni2532 is mapped to U+2543.
+But its name indicates it should be mapped to U+2532.
+The glyph named uni253A is mapped to U+2573.
+But its name indicates it should be mapped to U+253A.
+The glyph named uni254A is mapped to U+2572.
+But its name indicates it should be mapped to U+254A.
+The glyph named uni2543 is mapped to U+2571.
+But its name indicates it should be mapped to U+2543.
+The glyph named uni2573 is mapped to U+254C.
+But its name indicates it should be mapped to U+2573.
+The glyph named uni2572 is mapped to U+254E.
+But its name indicates it should be mapped to U+2572.
+The glyph named uni2571 is mapped to U+2577.
+But its name indicates it should be mapped to U+2571.
+The glyph named uni254C is mapped to U+2574.
+But its name indicates it should be mapped to U+254C.
+The glyph named uni254E is mapped to U+257C.
+But its name indicates it should be mapped to U+254E.
+The glyph named uni2577 is mapped to U+2576.
+But its name indicates it should be mapped to U+2577.
+The glyph named uni2574 is mapped to U+2575.
+But its name indicates it should be mapped to U+2574.
+The glyph named uni257C is mapped to U+257D.
+But its name indicates it should be mapped to U+257C.
+The glyph named uni2576 is mapped to U+2546.
+But its name indicates it should be mapped to U+2576.
+The glyph named uni2575 is mapped to U+252E.
+But its name indicates it should be mapped to U+2575.
+The glyph named uni257D is mapped to U+2536.
+But its name indicates it should be mapped to U+257D.
+The glyph named uni2546 is mapped to U+253E.
+But its name indicates it should be mapped to U+2546.
+The glyph named uni252E is mapped to U+2531.
+But its name indicates it should be mapped to U+252E.
+The glyph named uni2536 is mapped to U+2539.
+But its name indicates it should be mapped to U+2536.
+The glyph named uni253E is mapped to U+2549.
+But its name indicates it should be mapped to U+253E.
+The glyph named uni2531 is mapped to U+2544.
+But its name indicates it should be mapped to U+2531.
+The glyph named uni2539 is mapped to U+2540.
+But its name indicates it should be mapped to U+2539.
+The glyph named uni2549 is mapped to U+2538.
+But its name indicates it should be mapped to U+2549.
+The glyph named uni2544 is mapped to U+2526.
+But its name indicates it should be mapped to U+2544.
+The glyph named uni2540 is mapped to U+251A.
+But its name indicates it should be mapped to U+2540.
+The glyph named uni2538 is mapped to U+251E.
+But its name indicates it should be mapped to U+2538.
+The glyph named uni2526 is mapped to U+2516.
+But its name indicates it should be mapped to U+2526.
+The glyph named uni251A is mapped to U+2548.
+But its name indicates it should be mapped to U+251A.
+The glyph named uni251E is mapped to U+2537.
+But its name indicates it should be mapped to U+251E.
+The glyph named uni2516 is mapped to U+252A.
+But its name indicates it should be mapped to U+2516.
+The glyph named uni2548 is mapped to U+2519.
+But its name indicates it should be mapped to U+2548.
+The glyph named uni2537 is mapped to U+2522.
+But its name indicates it should be mapped to U+2537.
+The glyph named uni252A is mapped to U+2515.
+But its name indicates it should be mapped to U+252A.
+The glyph named uni2519 is mapped to U+2542.
+But its name indicates it should be mapped to U+2519.
+The glyph named uni2522 is mapped to U+2528.
+But its name indicates it should be mapped to U+2522.
+The glyph named uni2515 is mapped to U+2520.
+But its name indicates it should be mapped to U+2515.
+The glyph named uni2542 is mapped to U+253F.
+But its name indicates it should be mapped to U+2542.
+The glyph named uni2528 is mapped to U+2525.
+But its name indicates it should be mapped to U+2528.
+The glyph named uni2520 is mapped to U+251D.
+But its name indicates it should be mapped to U+2520.
+The glyph named uni2525 is mapped to U+2620.
+But its name indicates it should be mapped to U+2525.
+The glyph named uni251D is mapped to U+263A.
+But its name indicates it should be mapped to U+251D.
+The glyph named uni2620 is mapped to U+263C.
+But its name indicates it should be mapped to U+2620.
+The glyph named smileface is mapped to U+2640.
+But its name indicates it should be mapped to U+263A.
+The glyph named invsmileface is mapped to U+2642.
+But its name indicates it should be mapped to U+263B.
+The glyph named sun is mapped to U+2660.
+But its name indicates it should be mapped to U+263C.
+The glyph named female is mapped to U+2663.
+But its name indicates it should be mapped to U+2640.
+The glyph named male is mapped to U+2665.
+But its name indicates it should be mapped to U+2642.
+The glyph named spade is mapped to U+2666.
+But its name indicates it should be mapped to U+2660.
+The glyph named club is mapped to U+266A.
+But its name indicates it should be mapped to U+2663.
+The glyph named heart is mapped to U+266B.
+But its name indicates it should be mapped to U+2665.
+The glyph named diamond is mapped to U+007C.
+But its name indicates it should be mapped to U+2666.
+The glyph named musicalnote is mapped to U+00A6.
+But its name indicates it should be mapped to U+266A.
+The glyph named musicalnotedbl is mapped to U+0040.
+But its name indicates it should be mapped to U+266B.
+The glyph named bar is mapped to U+0026.
+But its name indicates it should be mapped to U+007C.
+The glyph named brokenbar is mapped to U+00B6.
+But its name indicates it should be mapped to U+00A6.
+The glyph named at is mapped to U+00A9.
+But its name indicates it should be mapped to U+0040.
+The glyph named ampersand is mapped to U+00AE.
+But its name indicates it should be mapped to U+0026.
+The glyph named paragraph is mapped to U+00A7.
+But its name indicates it should be mapped to U+00B6.
+The glyph named copyright is mapped to U+2122.
+But its name indicates it should be mapped to U+00A9.
+The glyph named registered is mapped to U+00B0.
+But its name indicates it should be mapped to U+00AE.
+The glyph named section is mapped to U+212E.
+But its name indicates it should be mapped to U+00A7.
+The glyph named trademark is mapped to U+2113.
+But its name indicates it should be mapped to U+2122.
+The glyph named degree is mapped to U+2116.
+But its name indicates it should be mapped to U+00B0.
+The glyph named estimated is mapped to U+005E.
+But its name indicates it should be mapped to U+212E.
+The glyph named uni2113 is mapped to U+2020.
+But its name indicates it should be mapped to U+2113.
+The glyph named uni2116 is mapped to U+2021.
+But its name indicates it should be mapped to U+2116.
+The glyph named asciicircum is mapped to U+1F310.
+But its name indicates it should be mapped to U+005E.
+The glyph named dagger is mapped to U+2302.
+But its name indicates it should be mapped to U+2020.
+The glyph named daggerdbl is mapped to U+21EA.
+But its name indicates it should be mapped to U+2021.
+The glyph named u1F310 is mapped to U+2327.
+But its name indicates it should be mapped to U+1F310.
+The glyph named house is mapped to U+232B.
+But its name indicates it should be mapped to U+2302.
+The glyph named capslock is mapped to U+2326.
+But its name indicates it should be mapped to U+21EA.
+The glyph named clear is mapped to U+2328.
+But its name indicates it should be mapped to U+2327.
+The glyph named uni232B is mapped to U+23CE.
+But its name indicates it should be mapped to U+232B.
+The glyph named acute is mapped to U+00B8.
+But its name indicates it should be mapped to U+00B4.
+The glyph named breve is mapped to U+02C6.
+But its name indicates it should be mapped to U+02D8.
+The glyph named caron is mapped to U+00A8.
+But its name indicates it should be mapped to U+02C7.
+The glyph named cedilla is mapped to U+02D9.
+But its name indicates it should be mapped to U+00B8.
+The glyph named circumflex is mapped to U+0060.
+But its name indicates it should be mapped to U+02C6.
+The glyph named dieresis is mapped to U+02DD.
+But its name indicates it should be mapped to U+00A8.
+The glyph named dotaccent is mapped to U+00AF.
+But its name indicates it should be mapped to U+02D9.
+The glyph named grave is mapped to U+02DB.
+But its name indicates it should be mapped to U+0060.
+The glyph named hungarumlaut is mapped to U+02DA.
+But its name indicates it should be mapped to U+02DD.
+The glyph named macron is mapped to U+02DC.
+But its name indicates it should be mapped to U+00AF.
+The glyph named acutecomb is mapped to U+0327.
+But its name indicates it should be mapped to U+0301.
+The glyph named uni0306 is mapped to U+0302.
+But its name indicates it should be mapped to U+0306.
+The glyph named uni030C is mapped to U+0313.
+But its name indicates it should be mapped to U+030C.
+The glyph named uni0327 is mapped to U+0326.
+But its name indicates it should be mapped to U+0327.
+The glyph named uni0302 is mapped to U+0314.
+But its name indicates it should be mapped to U+0302.
+The glyph named uni0326 is mapped to U+0308.
+But its name indicates it should be mapped to U+0326.
+The glyph named uni0314 is mapped to U+0307.
+But its name indicates it should be mapped to U+0314.
+The glyph named uni0308 is mapped to U+030B.
+But its name indicates it should be mapped to U+0308.
+The glyph named uni0307 is mapped to U+0304.
+But its name indicates it should be mapped to U+0307.
+The glyph named gravecomb is mapped to U+030A.
+But its name indicates it should be mapped to U+0300.
+The glyph named uni030B is mapped to U+0336.
+But its name indicates it should be mapped to U+030B.
+The glyph named uni0304 is mapped to U+0335.
+But its name indicates it should be mapped to U+0304.
+The glyph named uni030A is mapped to U+0303.
+But its name indicates it should be mapped to U+030A.
+The glyph named tildecomb is mapped to U+02C9.
+But its name indicates it should be mapped to U+0303.
+The glyph named firsttonechinese is mapped to U+1FC0.
+But its name indicates it should be mapped to U+02C9.
+The glyph named dieresistonos is mapped to U+02BC.
+But its name indicates it should be mapped to U+0385.
+The glyph named uni1FC0 is mapped to U+E000.
+But its name indicates it should be mapped to U+1FC0.
+The glyph named uni02BC is mapped to U+E002.
+But its name indicates it should be mapped to U+02BC.
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): FAIL
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ fontbakery-fix-glyph-private-encoding.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): ERROR
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+$ fontbakery-fix-nbsp.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): FAIL
+$ fontbakery-fix-opentype-names.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): FAIL
+$ fontbakery-fix-opentype-names.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): FAIL
+$ fontbakery-fix-dsig.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): FAIL
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_menu_file_exists(): FAIL
+### Optimize TTF FiraMono-Medium.ttf
+$ ls -l 'FiraMono-Medium.ttf'* # look at the size savings of that subset process
+FiraMono-Medium.ttf.opt: 88076 bytes
+FiraMono-Medium.ttf: 100188 bytes
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf.opt /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+### Autohint TTFs (ttfautohint) FiraMono-Medium.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf '/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.autohint.ttf'
+
+$ ls -l /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf: 88076 bytes
+/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.autohint.ttf: 118576 bytes
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.autohint.ttf /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+### Subset TTFs (pyftsubset) FiraMono-Medium.ttf
+$ pyftsubset FiraMono-Medium.latin
+$ pyftsubset FiraMono-Medium.menu
+strippedname:/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Medium.ttf
+spaceWidth is    600
+nbspWidth is     600
+Nothing to do
+### Test FiraMono-Bold.ttf
+$ fontbakery-check.py result FiraMono-Bold.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): FAIL
+$ fontbakery-fix-ascii-fontmetadata.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): FAIL
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+The glyph named Delta is mapped to U+0394.
+But its name indicates it should be mapped to U+2206.
+The glyph named Omega is mapped to U+03A9.
+But its name indicates it should be mapped to U+2126.
+The glyph named mu is mapped to U+03BC.
+But its name indicates it should be mapped to U+00B5.
+The glyph named uni25D6 is mapped to U+25D7.
+But its name indicates it should be mapped to U+25D6.
+The glyph named uni25D7 is mapped to U+25F5.
+But its name indicates it should be mapped to U+25D7.
+The glyph named uni25F4 is mapped to U+25F7.
+But its name indicates it should be mapped to U+25F4.
+The glyph named uni25F5 is mapped to U+25C9.
+But its name indicates it should be mapped to U+25F5.
+The glyph named uni25F6 is mapped to U+25CE.
+But its name indicates it should be mapped to U+25F6.
+The glyph named uni25F7 is mapped to U+25D9.
+But its name indicates it should be mapped to U+25F7.
+The glyph named fisheye is mapped to U+25DA.
+But its name indicates it should be mapped to U+25C9.
+The glyph named bullseye is mapped to U+25DB.
+But its name indicates it should be mapped to U+25CE.
+The glyph named invcircle is mapped to U+25E0.
+But its name indicates it should be mapped to U+25D9.
+The glyph named uni25DA is mapped to U+25E1.
+But its name indicates it should be mapped to U+25DA.
+The glyph named uni25DB is mapped to U+25DC.
+But its name indicates it should be mapped to U+25DB.
+The glyph named uni25E0 is mapped to U+25DD.
+But its name indicates it should be mapped to U+25E0.
+The glyph named uni25E1 is mapped to U+25DE.
+But its name indicates it should be mapped to U+25E1.
+The glyph named uni25DC is mapped to U+25DF.
+But its name indicates it should be mapped to U+25DC.
+The glyph named uni25DD is mapped to U+25C6.
+But its name indicates it should be mapped to U+25DD.
+The glyph named uni25DE is mapped to U+25C7.
+But its name indicates it should be mapped to U+25DE.
+The glyph named uni25DF is mapped to U+25CA.
+But its name indicates it should be mapped to U+25DF.
+The glyph named lozenge is mapped to U+25AD.
+But its name indicates it should be mapped to U+25CA.
+The glyph named uni25AE is mapped to U+25AF.
+But its name indicates it should be mapped to U+25AE.
+The glyph named filledrect is mapped to U+250C.
+But its name indicates it should be mapped to U+25AC.
+The glyph named uni25AD is mapped to U+2514.
+But its name indicates it should be mapped to U+25AD.
+The glyph named uni25AF is mapped to U+2510.
+But its name indicates it should be mapped to U+25AF.
+The glyph named uni250C is mapped to U+2518.
+But its name indicates it should be mapped to U+250C.
+The glyph named uni2514 is mapped to U+253C.
+But its name indicates it should be mapped to U+2514.
+The glyph named uni2510 is mapped to U+252C.
+But its name indicates it should be mapped to U+2510.
+The glyph named uni2518 is mapped to U+2534.
+But its name indicates it should be mapped to U+2518.
+The glyph named uni253C is mapped to U+251C.
+But its name indicates it should be mapped to U+253C.
+The glyph named uni252C is mapped to U+2524.
+But its name indicates it should be mapped to U+252C.
+The glyph named uni2534 is mapped to U+2500.
+But its name indicates it should be mapped to U+2534.
+The glyph named uni251C is mapped to U+2502.
+But its name indicates it should be mapped to U+251C.
+The glyph named uni2524 is mapped to U+2561.
+But its name indicates it should be mapped to U+2524.
+The glyph named uni2500 is mapped to U+2562.
+But its name indicates it should be mapped to U+2500.
+The glyph named uni2502 is mapped to U+2556.
+But its name indicates it should be mapped to U+2502.
+The glyph named uni2561 is mapped to U+2555.
+But its name indicates it should be mapped to U+2561.
+The glyph named uni2562 is mapped to U+2563.
+But its name indicates it should be mapped to U+2562.
+The glyph named uni2556 is mapped to U+2551.
+But its name indicates it should be mapped to U+2556.
+The glyph named uni2555 is mapped to U+2557.
+But its name indicates it should be mapped to U+2555.
+The glyph named uni2563 is mapped to U+255D.
+But its name indicates it should be mapped to U+2563.
+The glyph named uni2551 is mapped to U+255C.
+But its name indicates it should be mapped to U+2551.
+The glyph named uni2557 is mapped to U+255B.
+But its name indicates it should be mapped to U+2557.
+The glyph named uni255D is mapped to U+255E.
+But its name indicates it should be mapped to U+255D.
+The glyph named uni255C is mapped to U+255F.
+But its name indicates it should be mapped to U+255C.
+The glyph named uni255B is mapped to U+255A.
+But its name indicates it should be mapped to U+255B.
+The glyph named uni255E is mapped to U+2554.
+But its name indicates it should be mapped to U+255E.
+The glyph named uni255F is mapped to U+2569.
+But its name indicates it should be mapped to U+255F.
+The glyph named uni255A is mapped to U+2566.
+But its name indicates it should be mapped to U+255A.
+The glyph named uni2554 is mapped to U+2560.
+But its name indicates it should be mapped to U+2554.
+The glyph named uni2569 is mapped to U+2550.
+But its name indicates it should be mapped to U+2569.
+The glyph named uni2566 is mapped to U+256C.
+But its name indicates it should be mapped to U+2566.
+The glyph named uni2560 is mapped to U+2567.
+But its name indicates it should be mapped to U+2560.
+The glyph named uni2550 is mapped to U+2568.
+But its name indicates it should be mapped to U+2550.
+The glyph named uni256C is mapped to U+2564.
+But its name indicates it should be mapped to U+256C.
+The glyph named uni2567 is mapped to U+2565.
+But its name indicates it should be mapped to U+2567.
+The glyph named uni2568 is mapped to U+2559.
+But its name indicates it should be mapped to U+2568.
+The glyph named uni2564 is mapped to U+2558.
+But its name indicates it should be mapped to U+2564.
+The glyph named uni2565 is mapped to U+2552.
+But its name indicates it should be mapped to U+2565.
+The glyph named uni2559 is mapped to U+2553.
+But its name indicates it should be mapped to U+2559.
+The glyph named uni2558 is mapped to U+256B.
+But its name indicates it should be mapped to U+2558.
+The glyph named uni2552 is mapped to U+256A.
+But its name indicates it should be mapped to U+2552.
+The glyph named uni2553 is mapped to U+25A0.
+But its name indicates it should be mapped to U+2553.
+The glyph named uni256B is mapped to U+25A1.
+But its name indicates it should be mapped to U+256B.
+The glyph named uni256A is mapped to U+25A2.
+But its name indicates it should be mapped to U+256A.
+The glyph named filledbox is mapped to U+25A3.
+But its name indicates it should be mapped to U+25A0.
+The glyph named H22073 is mapped to U+25AA.
+But its name indicates it should be mapped to U+25A1.
+The glyph named uni25A2 is mapped to U+25AB.
+But its name indicates it should be mapped to U+25A2.
+The glyph named squarewhitewithsmallblack is mapped to U+25E7.
+But its name indicates it should be mapped to U+25A3.
+The glyph named H18543 is mapped to U+25E8.
+But its name indicates it should be mapped to U+25AA.
+The glyph named H18551 is mapped to U+25E9.
+But its name indicates it should be mapped to U+25AB.
+The glyph named uni25E7 is mapped to U+25EA.
+But its name indicates it should be mapped to U+25E7.
+The glyph named uni25E8 is mapped to U+25EB.
+But its name indicates it should be mapped to U+25E8.
+The glyph named uni25E9 is mapped to U+25F0.
+But its name indicates it should be mapped to U+25E9.
+The glyph named uni25EA is mapped to U+25F1.
+But its name indicates it should be mapped to U+25EA.
+The glyph named uni25EB is mapped to U+25F2.
+But its name indicates it should be mapped to U+25EB.
+The glyph named uni25F0 is mapped to U+25F3.
+But its name indicates it should be mapped to U+25F0.
+The glyph named uni25F1 is mapped to U+25B2.
+But its name indicates it should be mapped to U+25F1.
+The glyph named uni25F2 is mapped to U+25BC.
+But its name indicates it should be mapped to U+25F2.
+The glyph named uni25F3 is mapped to U+25BA.
+But its name indicates it should be mapped to U+25F3.
+The glyph named triagup is mapped to U+25C4.
+But its name indicates it should be mapped to U+25B2.
+The glyph named triagdn is mapped to U+25E5.
+But its name indicates it should be mapped to U+25BC.
+The glyph named triagrt is mapped to U+25E2.
+But its name indicates it should be mapped to U+25BA.
+The glyph named triaglf is mapped to U+25E3.
+But its name indicates it should be mapped to U+25C4.
+The glyph named blackupperrighttriangle is mapped to U+25E4.
+But its name indicates it should be mapped to U+25E5.
+The glyph named blacklowerrighttriangle is mapped to U+2530.
+But its name indicates it should be mapped to U+25E2.
+The glyph named blacklowerlefttriangle is mapped to U+2512.
+But its name indicates it should be mapped to U+25E3.
+The glyph named blackupperlefttriangle is mapped to U+2527.
+But its name indicates it should be mapped to U+25E4.
+The glyph named uni2530 is mapped to U+250E.
+But its name indicates it should be mapped to U+2530.
+The glyph named uni2512 is mapped to U+251F.
+But its name indicates it should be mapped to U+2512.
+The glyph named uni2527 is mapped to U+2541.
+But its name indicates it should be mapped to U+2527.
+The glyph named uni250E is mapped to U+252F.
+But its name indicates it should be mapped to U+250E.
+The glyph named uni251F is mapped to U+2511.
+But its name indicates it should be mapped to U+251F.
+The glyph named uni2541 is mapped to U+2529.
+But its name indicates it should be mapped to U+2541.
+The glyph named uni252F is mapped to U+250D.
+But its name indicates it should be mapped to U+252F.
+The glyph named uni2511 is mapped to U+2521.
+But its name indicates it should be mapped to U+2511.
+The glyph named uni2529 is mapped to U+2547.
+But its name indicates it should be mapped to U+2529.
+The glyph named uni250D is mapped to U+254D.
+But its name indicates it should be mapped to U+250D.
+The glyph named uni2521 is mapped to U+254F.
+But its name indicates it should be mapped to U+2521.
+The glyph named uni2547 is mapped to U+257B.
+But its name indicates it should be mapped to U+2547.
+The glyph named uni254D is mapped to U+2533.
+But its name indicates it should be mapped to U+254D.
+The glyph named uni254F is mapped to U+2513.
+But its name indicates it should be mapped to U+254F.
+The glyph named uni257B is mapped to U+250F.
+But its name indicates it should be mapped to U+257B.
+The glyph named uni2533 is mapped to U+2501.
+But its name indicates it should be mapped to U+2533.
+The glyph named uni2513 is mapped to U+2578.
+But its name indicates it should be mapped to U+2513.
+The glyph named uni250F is mapped to U+257E.
+But its name indicates it should be mapped to U+250F.
+The glyph named uni2501 is mapped to U+257A.
+But its name indicates it should be mapped to U+2501.
+The glyph named uni2578 is mapped to U+2579.
+But its name indicates it should be mapped to U+2578.
+The glyph named uni257E is mapped to U+253B.
+But its name indicates it should be mapped to U+257E.
+The glyph named uni257A is mapped to U+251B.
+But its name indicates it should be mapped to U+257A.
+The glyph named uni2579 is mapped to U+257F.
+But its name indicates it should be mapped to U+2579.
+The glyph named uni253B is mapped to U+2517.
+But its name indicates it should be mapped to U+253B.
+The glyph named uni251B is mapped to U+2503.
+But its name indicates it should be mapped to U+251B.
+The glyph named uni257F is mapped to U+254B.
+But its name indicates it should be mapped to U+257F.
+The glyph named uni2517 is mapped to U+252B.
+But its name indicates it should be mapped to U+2517.
+The glyph named uni2503 is mapped to U+2523.
+But its name indicates it should be mapped to U+2503.
+The glyph named uni254B is mapped to U+2545.
+But its name indicates it should be mapped to U+254B.
+The glyph named uni252B is mapped to U+252D.
+But its name indicates it should be mapped to U+252B.
+The glyph named uni2523 is mapped to U+2535.
+But its name indicates it should be mapped to U+2523.
+The glyph named uni2545 is mapped to U+253D.
+But its name indicates it should be mapped to U+2545.
+The glyph named uni252D is mapped to U+2532.
+But its name indicates it should be mapped to U+252D.
+The glyph named uni2535 is mapped to U+253A.
+But its name indicates it should be mapped to U+2535.
+The glyph named uni253D is mapped to U+254A.
+But its name indicates it should be mapped to U+253D.
+The glyph named uni2532 is mapped to U+2543.
+But its name indicates it should be mapped to U+2532.
+The glyph named uni253A is mapped to U+2573.
+But its name indicates it should be mapped to U+253A.
+The glyph named uni254A is mapped to U+2572.
+But its name indicates it should be mapped to U+254A.
+The glyph named uni2543 is mapped to U+2571.
+But its name indicates it should be mapped to U+2543.
+The glyph named uni2573 is mapped to U+254C.
+But its name indicates it should be mapped to U+2573.
+The glyph named uni2572 is mapped to U+254E.
+But its name indicates it should be mapped to U+2572.
+The glyph named uni2571 is mapped to U+2577.
+But its name indicates it should be mapped to U+2571.
+The glyph named uni254C is mapped to U+2574.
+But its name indicates it should be mapped to U+254C.
+The glyph named uni254E is mapped to U+257C.
+But its name indicates it should be mapped to U+254E.
+The glyph named uni2577 is mapped to U+2576.
+But its name indicates it should be mapped to U+2577.
+The glyph named uni2574 is mapped to U+2575.
+But its name indicates it should be mapped to U+2574.
+The glyph named uni257C is mapped to U+257D.
+But its name indicates it should be mapped to U+257C.
+The glyph named uni2576 is mapped to U+2546.
+But its name indicates it should be mapped to U+2576.
+The glyph named uni2575 is mapped to U+252E.
+But its name indicates it should be mapped to U+2575.
+The glyph named uni257D is mapped to U+2536.
+But its name indicates it should be mapped to U+257D.
+The glyph named uni2546 is mapped to U+253E.
+But its name indicates it should be mapped to U+2546.
+The glyph named uni252E is mapped to U+2531.
+But its name indicates it should be mapped to U+252E.
+The glyph named uni2536 is mapped to U+2539.
+But its name indicates it should be mapped to U+2536.
+The glyph named uni253E is mapped to U+2549.
+But its name indicates it should be mapped to U+253E.
+The glyph named uni2531 is mapped to U+2544.
+But its name indicates it should be mapped to U+2531.
+The glyph named uni2539 is mapped to U+2540.
+But its name indicates it should be mapped to U+2539.
+The glyph named uni2549 is mapped to U+2538.
+But its name indicates it should be mapped to U+2549.
+The glyph named uni2544 is mapped to U+2526.
+But its name indicates it should be mapped to U+2544.
+The glyph named uni2540 is mapped to U+251A.
+But its name indicates it should be mapped to U+2540.
+The glyph named uni2538 is mapped to U+251E.
+But its name indicates it should be mapped to U+2538.
+The glyph named uni2526 is mapped to U+2516.
+But its name indicates it should be mapped to U+2526.
+The glyph named uni251A is mapped to U+2548.
+But its name indicates it should be mapped to U+251A.
+The glyph named uni251E is mapped to U+2537.
+But its name indicates it should be mapped to U+251E.
+The glyph named uni2516 is mapped to U+252A.
+But its name indicates it should be mapped to U+2516.
+The glyph named uni2548 is mapped to U+2519.
+But its name indicates it should be mapped to U+2548.
+The glyph named uni2537 is mapped to U+2522.
+But its name indicates it should be mapped to U+2537.
+The glyph named uni252A is mapped to U+2515.
+But its name indicates it should be mapped to U+252A.
+The glyph named uni2519 is mapped to U+2542.
+But its name indicates it should be mapped to U+2519.
+The glyph named uni2522 is mapped to U+2528.
+But its name indicates it should be mapped to U+2522.
+The glyph named uni2515 is mapped to U+2520.
+But its name indicates it should be mapped to U+2515.
+The glyph named uni2542 is mapped to U+253F.
+But its name indicates it should be mapped to U+2542.
+The glyph named uni2528 is mapped to U+2525.
+But its name indicates it should be mapped to U+2528.
+The glyph named uni2520 is mapped to U+251D.
+But its name indicates it should be mapped to U+2520.
+The glyph named uni2525 is mapped to U+2620.
+But its name indicates it should be mapped to U+2525.
+The glyph named uni251D is mapped to U+263A.
+But its name indicates it should be mapped to U+251D.
+The glyph named uni2620 is mapped to U+263C.
+But its name indicates it should be mapped to U+2620.
+The glyph named smileface is mapped to U+2640.
+But its name indicates it should be mapped to U+263A.
+The glyph named invsmileface is mapped to U+2642.
+But its name indicates it should be mapped to U+263B.
+The glyph named sun is mapped to U+2660.
+But its name indicates it should be mapped to U+263C.
+The glyph named female is mapped to U+2663.
+But its name indicates it should be mapped to U+2640.
+The glyph named male is mapped to U+2665.
+But its name indicates it should be mapped to U+2642.
+The glyph named spade is mapped to U+2666.
+But its name indicates it should be mapped to U+2660.
+The glyph named club is mapped to U+266A.
+But its name indicates it should be mapped to U+2663.
+The glyph named heart is mapped to U+266B.
+But its name indicates it should be mapped to U+2665.
+The glyph named diamond is mapped to U+007C.
+But its name indicates it should be mapped to U+2666.
+The glyph named musicalnote is mapped to U+00A6.
+But its name indicates it should be mapped to U+266A.
+The glyph named musicalnotedbl is mapped to U+0040.
+But its name indicates it should be mapped to U+266B.
+The glyph named bar is mapped to U+0026.
+But its name indicates it should be mapped to U+007C.
+The glyph named brokenbar is mapped to U+00B6.
+But its name indicates it should be mapped to U+00A6.
+The glyph named at is mapped to U+00A9.
+But its name indicates it should be mapped to U+0040.
+The glyph named ampersand is mapped to U+00AE.
+But its name indicates it should be mapped to U+0026.
+The glyph named paragraph is mapped to U+00A7.
+But its name indicates it should be mapped to U+00B6.
+The glyph named copyright is mapped to U+2122.
+But its name indicates it should be mapped to U+00A9.
+The glyph named registered is mapped to U+00B0.
+But its name indicates it should be mapped to U+00AE.
+The glyph named section is mapped to U+212E.
+But its name indicates it should be mapped to U+00A7.
+The glyph named trademark is mapped to U+2113.
+But its name indicates it should be mapped to U+2122.
+The glyph named degree is mapped to U+2116.
+But its name indicates it should be mapped to U+00B0.
+The glyph named estimated is mapped to U+005E.
+But its name indicates it should be mapped to U+212E.
+The glyph named uni2113 is mapped to U+2020.
+But its name indicates it should be mapped to U+2113.
+The glyph named uni2116 is mapped to U+2021.
+But its name indicates it should be mapped to U+2116.
+The glyph named asciicircum is mapped to U+1F310.
+But its name indicates it should be mapped to U+005E.
+The glyph named dagger is mapped to U+2302.
+But its name indicates it should be mapped to U+2020.
+The glyph named daggerdbl is mapped to U+21EA.
+But its name indicates it should be mapped to U+2021.
+The glyph named u1F310 is mapped to U+2327.
+But its name indicates it should be mapped to U+1F310.
+The glyph named house is mapped to U+232B.
+But its name indicates it should be mapped to U+2302.
+The glyph named capslock is mapped to U+2326.
+But its name indicates it should be mapped to U+21EA.
+The glyph named clear is mapped to U+2328.
+But its name indicates it should be mapped to U+2327.
+The glyph named uni232B is mapped to U+23CE.
+But its name indicates it should be mapped to U+232B.
+The glyph named acute is mapped to U+00B8.
+But its name indicates it should be mapped to U+00B4.
+The glyph named breve is mapped to U+02C6.
+But its name indicates it should be mapped to U+02D8.
+The glyph named caron is mapped to U+00A8.
+But its name indicates it should be mapped to U+02C7.
+The glyph named cedilla is mapped to U+02D9.
+But its name indicates it should be mapped to U+00B8.
+The glyph named circumflex is mapped to U+0060.
+But its name indicates it should be mapped to U+02C6.
+The glyph named dieresis is mapped to U+02DD.
+But its name indicates it should be mapped to U+00A8.
+The glyph named dotaccent is mapped to U+00AF.
+But its name indicates it should be mapped to U+02D9.
+The glyph named grave is mapped to U+02DB.
+But its name indicates it should be mapped to U+0060.
+The glyph named hungarumlaut is mapped to U+02DA.
+But its name indicates it should be mapped to U+02DD.
+The glyph named macron is mapped to U+02DC.
+But its name indicates it should be mapped to U+00AF.
+The glyph named acutecomb is mapped to U+0327.
+But its name indicates it should be mapped to U+0301.
+The glyph named uni0306 is mapped to U+0302.
+But its name indicates it should be mapped to U+0306.
+The glyph named uni030C is mapped to U+0313.
+But its name indicates it should be mapped to U+030C.
+The glyph named uni0327 is mapped to U+0326.
+But its name indicates it should be mapped to U+0327.
+The glyph named uni0302 is mapped to U+0314.
+But its name indicates it should be mapped to U+0302.
+The glyph named uni0326 is mapped to U+0308.
+But its name indicates it should be mapped to U+0326.
+The glyph named uni0314 is mapped to U+0307.
+But its name indicates it should be mapped to U+0314.
+The glyph named uni0308 is mapped to U+030B.
+But its name indicates it should be mapped to U+0308.
+The glyph named uni0307 is mapped to U+0304.
+But its name indicates it should be mapped to U+0307.
+The glyph named gravecomb is mapped to U+030A.
+But its name indicates it should be mapped to U+0300.
+The glyph named uni030B is mapped to U+0336.
+But its name indicates it should be mapped to U+030B.
+The glyph named uni0304 is mapped to U+0335.
+But its name indicates it should be mapped to U+0304.
+The glyph named uni030A is mapped to U+0303.
+But its name indicates it should be mapped to U+030A.
+The glyph named tildecomb is mapped to U+02C9.
+But its name indicates it should be mapped to U+0303.
+The glyph named firsttonechinese is mapped to U+1FC0.
+But its name indicates it should be mapped to U+02C9.
+The glyph named dieresistonos is mapped to U+02BC.
+But its name indicates it should be mapped to U+0385.
+The glyph named uni1FC0 is mapped to U+E000.
+But its name indicates it should be mapped to U+1FC0.
+The glyph named uni02BC is mapped to U+E002.
+But its name indicates it should be mapped to U+02BC.
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): FAIL
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ fontbakery-fix-glyph-private-encoding.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): ERROR
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+$ fontbakery-fix-nbsp.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): FAIL
+$ fontbakery-fix-opentype-names.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): FAIL
+$ fontbakery-fix-dsig.py /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): FAIL
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.fix /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_menu_file_exists(): FAIL
+### Optimize TTF FiraMono-Bold.ttf
+$ ls -l 'FiraMono-Bold.ttf'* # look at the size savings of that subset process
+FiraMono-Bold.ttf.opt: 88008 bytes
+FiraMono-Bold.ttf: 100112 bytes
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf.opt /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+### Autohint TTFs (ttfautohint) FiraMono-Bold.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf '/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.autohint.ttf'
+
+$ ls -l /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf: 88008 bytes
+/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.autohint.ttf: 118892 bytes
+$ mv /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.autohint.ttf /home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+### Subset TTFs (pyftsubset) FiraMono-Bold.ttf
+$ pyftsubset FiraMono-Bold.latin
+$ pyftsubset FiraMono-Bold.menu
+strippedname:/home/travis/build/fontdirectory/firamono/builds/build/FiraMono-Bold.ttf
+spaceWidth is    600
+nbspWidth is     600
+Nothing to do
+### (5 of 6) Generate METADATA.json (fontbakery-build-metadata.py)
+$ fontbakery-build-metadata.py /home/travis/build/fontdirectory/firamono/builds/build
+{} exists
+Designer's name from font is: Carrois Corporate & Edenspiekermann AG
+Original size: 117788\nGzip size: 60089
+Family Name: Fira Mono
+PS Name: FiraMono-Bold
+Full Name: Fira Mono Bold
+Style: normal
+Weight: 700
+Filename: FiraMono-Bold.ttf
+Copyright: Digitized data copyright (c) 2012-2014, The Mozilla Foundation and Telefonica S.A.
+Family Name: Fira Mono
+PS Name: FiraMono-Medium
+Full Name: Fira Mono Medium
+Style: normal
+Weight: 500
+Filename: FiraMono-Medium.ttf
+Copyright: Digitized data copyright (c) 2012-2014, The Mozilla Foundation and Telefonica S.A.
+Family Name: Fira Mono
+PS Name: FiraMono-Regular
+Full Name: Fira Mono
+Style: normal
+Weight: 400
+Filename: FiraMono-Regular.ttf
+Copyright: Digitized data copyright (c) 2012-2014, The Mozilla Foundation and Telefonica S.A.
+### (6 of 6) Run tests for METADATA.json
+$ fontbakery-check.py metadata METADATA.json
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_cyrillic(): FAIL
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_cyrillic_ext(): FAIL
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_greek(): FAIL
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_latin(): OK
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_latin_ext(): FAIL
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_menu(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_more_than_500b(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_valid_html(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_daltonmaag_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontbureau_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontscom_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontshop_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontsmith_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_houseind_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_myfonts_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_veer_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_family_is_listed_in_gwf(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_atleast_latin_menu_subsets_exist(): OK
+/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/tests/metadata_test.py:141: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+  self.assertTrue(designer in designers,
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_designer_exists_in_profiles_csv(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_items_dicts(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_no_dupes(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_has_unique_style_weight_pairs(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_license(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_no_unknown_top_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_subsets_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_top_keys_types(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_contains_correct_rfn(): FAIL
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_is_consistent_across_family(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_matches_pattern(): FAIL
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_metadata_copyright_size(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.TestFontOnDiskFamilyEqualToMetadataJSON.test_font_on_disk_family_equal_in_metadata_json(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.TestPostScriptNameInMetadataEqualFontOnDisk.test_postscriptname_in_metadata_equal_to_font_on_disk(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_font_name_matches_family(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_family_values_are_all_the_same(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_filename_matches_postscriptname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_font_have_regular(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fonts_fields_have_fontname(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_is_equal_to_internal_font_fullname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_matches_postScriptName(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_400(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_normal(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_copyrighttxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_description_exists(): OK
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_fontlogtxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_licensetxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_subsets_exists.CheckSubsetsExist.test_check_subsets_exists(): FAIL
+bakery_lint.tests.downstream.test_check_monospace_agreements.CheckMonospaceAgreement.test_check_monospace_agreement(): OK
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckItalicStyleMatchesMacStyle.test_check_italic_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckNormalStyleMatchesMacStyle.test_check_normal_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_metadata_matches_nametable.CheckMetadataMatchesNameTable.test_check_metadata_matches_nametable(): FAIL
+bakery_lint.tests.downstream.test_check_metadata_fields.CheckMetadataFields.test_check_metadata_fields(): OK
+bakery_lint.tests.downstream.test_check_menu_contains_proper_glyphs.CheckMenuSubsetContainsProperGlyphs.test_check_menu_contains_proper_glyphs(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_encodings_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_names_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_number_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_font_name_not_in_camelcase.CheckFontNameNotInCamelCase.test_fontname_not_in_camel_case(): OK
+bakery_lint.tests.downstream.test_check_files_menu_agreements.CheckFontsMenuAgreements.test_menu_file_agreement(): OK
+bakery_lint.tests.downstream.test_check_familyname_matches_fontnames.CheckFamilyNameMatchesFontNames.test_check_familyname_matches_fontnames(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckCanonicalWeights.test_check_canonical_weights(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckPostScriptNameMatchesWeight.test_postscriptname_contains_correct_weight(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFontWeightSameAsInMetadata.test_font_weight_same_as_in_metadata(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFullNameEqualCanonicalName.test_metadata_contains_current_font(): OK
+bakery_lint.tests.downstream.test_check_canonical_styles.CheckCanonicalStyles.test_check_canonical_styles(): OK
+bakery_lint.tests.downstream.test_check_canonical_filenames.CheckCanonicalFilenames.test_check_canonical_filenames(): OK
+{
+  "name": "Fira Mono", 
+  "designer": "Carrois and Edenspiekermann", 
+  "license": "OFL", 
+  "visibility": "Sandbox", 
+  "category": "Sans Serif", 
+  "size": 64822, 
+  "fonts": [
+    {
+      "name": "Fira Mono", 
+      "postScriptName": "FiraMono-Bold", 
+      "fullName": "Fira Mono Bold", 
+      "style": "normal", 
+      "weight": 700, 
+      "filename": "FiraMono-Bold.ttf", 
+      "copyright": "Digitized data copyright (c) 2012-2014, The Mozilla Foundation and Telefonica S.A."
+    }, 
+    {
+      "name": "Fira Mono", 
+      "postScriptName": "FiraMono-Medium", 
+      "fullName": "Fira Mono Medium", 
+      "style": "normal", 
+      "weight": 500, 
+      "filename": "FiraMono-Medium.ttf", 
+      "copyright": "Digitized data copyright (c) 2012-2014, The Mozilla Foundation and Telefonica S.A."
+    }, 
+    {
+      "name": "Fira Mono", 
+      "postScriptName": "FiraMono-Regular", 
+      "fullName": "Fira Mono", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "FiraMono-Regular.ttf", 
+      "copyright": "Digitized data copyright (c) 2012-2014, The Mozilla Foundation and Telefonica S.A."
+    }
+  ], 
+  "subsets": [
+    "latin", 
+    "menu"
+  ], 
+  "dateAdded": "2014-06-18"
+}
